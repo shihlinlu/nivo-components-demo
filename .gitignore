@@ -27,9 +27,6 @@ node_modules/
 # Output of 'npm pack'
 *.tgz
 
-# Yarn Integrity file
-.yarn-integrity
-
 # Compiled files
 dist/
 

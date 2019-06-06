@@ -1,17 +1,15 @@
 const path = require('path');
 const webpack = require('webpack');
-const { exec } = require('child_process');
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const CompressionPlugin = require('compression-webpack-plugin');
 
 const srcFolder = path.resolve(__dirname, './src');
 const distFolder = path.resolve(__dirname, './dist');
 
 const config = (env, argv) => {
-  const PRODUCTION = argv && argv.mode !== 'development';
+  const DEVELOPMENT = argv && argv.mode === 'development';
   const mainEntryPoint = './src/index.tsx';
 
   const plugins = [
@@ -28,13 +26,9 @@ const config = (env, argv) => {
     plugins.push(new BundleAnalyzerPlugin());
   }
 
-  if (PRODUCTION) {
-    plugins.push(new CompressionPlugin());
-  }
-
   plugins.push(
     new webpack.DefinePlugin({
-      ENVIRONMENT: JSON.stringify(PRODUCTION ? 'production' : 'development'),
+      ENVIRONMENT: JSON.stringify('development'),
     })
   );
 
@@ -48,9 +42,7 @@ const config = (env, argv) => {
       publicPath: '/',
       path: distFolder,
       // This filename change is because webpack-dev-server can't handle [chunkHash]
-      filename: PRODUCTION
-        ? '[name].[chunkHash].bundle.js'
-        : '[name].bundle.js',
+      filename:'[name].bundle.js',
     },
     optimization: {
       splitChunks: {
@@ -80,8 +72,8 @@ const config = (env, argv) => {
             {
               loader: 'eslint-loader',
               options: {
-                emitError: PRODUCTION,
-                emitWarning: !PRODUCTION,
+                emitError: DEVELOPMENT,
+                emitWarning: DEVELOPMENT,
               },
             },
           ],
@@ -97,7 +89,7 @@ const config = (env, argv) => {
                   [
                     'babel-plugin-styled-components',
                     {
-                      displayName: !PRODUCTION,
+                      displayName: DEVELOPMENT,
                       fileName: false,
                     },
                   ],
@@ -130,7 +122,7 @@ const config = (env, argv) => {
       compress: true,
       contentBase: distFolder,
     },
-    devtool: PRODUCTION ? 'hidden-source-map' : 'cheap-module-eval-source-map',
+    devtool:'cheap-module-eval-source-map',
     plugins,
   };
 };
