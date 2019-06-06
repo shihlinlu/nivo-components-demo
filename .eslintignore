@@ -1,0 +1,5 @@
+*.test.ts*
+*.test.js*
+dist/*
+jest/*
+webpack.config.js
