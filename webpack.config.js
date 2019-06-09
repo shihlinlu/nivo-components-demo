@@ -60,7 +60,7 @@ const config = (env, argv) => {
         'nv-pages': path.resolve(srcFolder, 'pages'),
         'nv-themes': path.resolve(srcFolder, 'themes'),
         'nv-src': srcFolder,
-        'StyledRoot': path.resolve(__dirname, './src/StyledRoot/StyledRoot'),
+        'RootStyles': path.resolve(srcFolder, './StyledRoot'),
       },
     },
     module: {
