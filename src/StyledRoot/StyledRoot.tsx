@@ -1,4 +1,4 @@
-import styled from '../themes/styledComponents';
+import styled from 'main-styled-components';
 
 const StyledRoot = styled.div`
   color: ${props => props.theme.root.color};
@@ -14,5 +14,3 @@ const StyledRoot = styled.div`
 `;
 
 export { StyledRoot };
-
-export default StyledRoot;

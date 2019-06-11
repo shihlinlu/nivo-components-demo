@@ -57,10 +57,10 @@ const config = (env, argv) => {
           srcFolder,
           'themes/styledComponents.ts'
         ),
-        'nv-pages': path.resolve(srcFolder, 'pages'),
-        'nv-themes': path.resolve(srcFolder, 'themes'),
-        'nv-src': srcFolder,
-        'RootStyles': path.resolve(srcFolder, './StyledRoot'),
+        'pages': path.resolve(srcFolder, 'pages'),
+        'themes': path.resolve(srcFolder, 'themes'),
+        'src': srcFolder,
+        'resources': path.resolve(srcFolder, 'resources'),
       },
     },
     module: {

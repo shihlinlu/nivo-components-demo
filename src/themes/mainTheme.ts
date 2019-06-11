@@ -8,12 +8,14 @@ const fonts = {
 const colorPalette = {
   white: '#ffffff',
   standardBlack: '#0e1111',
+  cyanTronBlue: '#6FC3DF',
+  darkGray: '#4d5363',
 };
 
 const mainTheme: ThemeType = {
   root: {
     color: colorPalette.standardBlack,
-    backgroundColor: colorPalette.white,
+    backgroundColor: colorPalette.darkGray,
     minWidth: 1360,
   },
   text: {

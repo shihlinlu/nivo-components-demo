@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'main-styled-components';
 
-import StyledRoot from './StyledRoot/StyledRoot';
+import { StyledRoot } from 'src/StyledRoot/StyledRoot';
+import mainTheme from 'themes/mainTheme';
+import Home from 'pages/Home/Home';
 import { store } from './mainStore';
-import Home from './pages/Home/Home';
-import mainTheme from './themes/mainTheme';
 
 const App = () => (
   <Provider store={store}>

@@ -10,11 +10,15 @@
     "strict": true,
     "baseUrl": "./src",
     "paths": {
+      "main-styled-components": ["themes/styledComponents.ts"],
       "pages/*": ["pages/*"],
+      "resources/*": ["resources/*"],
+      "themes/*": ["themes/*"],
+      "utility/*": ["utility/*"],
       "src/*": ["*"]
     },
     "lib": ["es2017", "es2018", "dom"],
     "skipLibCheck": true
   },
-  "include": ["./src/**/*"]
+  "include": ["./src/**/*", "types/*"]
 }
