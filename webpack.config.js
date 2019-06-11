@@ -110,7 +110,9 @@ const config = (env, argv) => {
           use: [
             {
               loader: 'file-loader',
-              options: {},
+              options: {
+                name: '[path][name].[ext]',
+              },
             },
           ],
         },

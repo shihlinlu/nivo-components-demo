@@ -14,4 +14,9 @@ export interface ThemeType {
       fontFamily: string;
     };
   };
+  card: {
+    borderColor: string;
+    backgroundColor: string;
+    textColor: string;
+  };
 }

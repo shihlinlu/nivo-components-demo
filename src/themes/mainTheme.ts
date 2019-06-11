@@ -26,6 +26,11 @@ const mainTheme: ThemeType = {
       fontFamily: fonts.monospace,
     },
   },
+  card: {
+    borderColor: colorPalette.cyanTronBlue,
+    backgroundColor: colorPalette.standardBlack,
+    textColor: colorPalette.white,
+  },
 };
 
 export default mainTheme;
