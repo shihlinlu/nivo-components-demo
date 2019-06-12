@@ -51,7 +51,6 @@ const config = (env, argv) => {
     },
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      // TODO: Fix alias paths
       alias: {
         'main-styled-components': path.resolve(
           srcFolder,
@@ -61,6 +60,7 @@ const config = (env, argv) => {
         'themes': path.resolve(srcFolder, 'themes'),
         'src': srcFolder,
         'resources': path.resolve(srcFolder, 'resources'),
+        'data': path.resolve(srcFolder, 'data'),
       },
     },
     module: {
