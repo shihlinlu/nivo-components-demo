@@ -6,24 +6,24 @@
 
 const hyperloopTravelData = [
   {
-    transportMode: 'Hyperloop',
-    time: 2.3833,
+    transportMode: 'HPL',
+    time: 3,
   },
   {
-    transportMode: 'Airplane',
-    time: 5.5,
+    transportMode: 'Air',
+    time: 6,
   },
   {
-    transportMode: 'High Speed Rail',
-    time: 9.5167,
+    transportMode: 'HSR',
+    time: 10,
   },
   {
     transportMode: 'Rail',
-    time: 12.75,
+    time: 13,
   },
   {
     transportMode: 'Car',
-    time: 24.85,
+    time: 25,
   },
 ];
 

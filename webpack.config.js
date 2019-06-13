@@ -61,6 +61,7 @@ const config = (env, argv) => {
         'src': srcFolder,
         'resources': path.resolve(srcFolder, 'resources'),
         'data': path.resolve(srcFolder, 'data'),
+        'charts': path.resolve(srcFolder, 'charts'),
       },
     },
     module: {
@@ -72,7 +73,7 @@ const config = (env, argv) => {
             {
               loader: 'eslint-loader',
               options: {
-                emitError: DEVELOPMENT,
+                // emitError: DEVELOPMENT,
                 emitWarning: DEVELOPMENT,
               },
             },

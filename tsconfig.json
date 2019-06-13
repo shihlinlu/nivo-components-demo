@@ -16,7 +16,8 @@
       "themes/*": ["themes/*"],
       "utility/*": ["utility/*"],
       "src/*": ["*"],
-      "data/*": ["data/*"]
+      "data/*": ["data/*"],
+      "charts/*": ["charts/*"]
     },
     "lib": ["es2017", "es2018", "dom"],
     "skipLibCheck": true
