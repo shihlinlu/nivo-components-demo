@@ -1,21 +1,31 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import createSagaMiddleware from 'redux-saga';
+import {
+  connectRouter,
+  routerMiddleware,
+  RouterState,
+} from 'connected-react-router';
+import { createBrowserHistory } from 'history';
 
 import { all } from 'redux-saga/effects';
 
-// const rootReducer = combineReducers({});
-// eslint-disable-next-line
-const rootReducer = (state: any) => state;
+const history = createBrowserHistory();
 
-// eslint-disable-next-line
-export interface MainStoreType {}
+const rootReducer = combineReducers({
+  router: connectRouter(history),
+});
+
+export interface RootState {
+  router: RouterState;
+}
 
 function* rootSaga() {
   yield all([]);
 }
 
 const sagaMiddleware = createSagaMiddleware();
-const middleware = [sagaMiddleware];
+// eslint-disable-next-line
+const middleware: any = [sagaMiddleware, routerMiddleware(history)];
 
 // Necessary if we want to use Redux Devtools
 const composeEnhancers =
@@ -28,4 +38,4 @@ const store = createStore(
 );
 sagaMiddleware.run(rootSaga);
 
-export { store };
+export { store, history };

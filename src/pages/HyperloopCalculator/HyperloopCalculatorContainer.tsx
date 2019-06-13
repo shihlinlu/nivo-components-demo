@@ -1,6 +1,13 @@
 import * as React from 'react';
 
+import { push } from 'connected-react-router';
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
+
+import { ROUTES } from 'utility/routerConstants';
+
 import HyperloopBarChart from './HyperloopBarChart';
+
 import {
   StyledHyperloopPage,
   StyledHyperloopCardSection,
@@ -12,7 +19,12 @@ import {
   StyledText,
 } from './StyledHyperloopComponents';
 
-const HyperloopCalculatorContainer = () => {
+interface Props {
+  /** callback for navigating to home page */
+  navigateToHome: () => void;
+}
+
+const HyperloopCalculatorContainer = ({ navigateToHome }: Props) => {
   return (
     <StyledHyperloopPage>
       <StyledHyperloopCardSection>
@@ -26,7 +38,9 @@ const HyperloopCalculatorContainer = () => {
             <HyperloopBarChart />
           </StyledChartContainer>
           <StyledActionWrapper>
-            <StyledButton margin="5px">Back to Home</StyledButton>
+            <StyledButton margin="5px" onClick={navigateToHome}>
+              Back to Home
+            </StyledButton>
           </StyledActionWrapper>
         </StyledCard>
       </StyledHyperloopCardSection>
@@ -34,4 +48,13 @@ const HyperloopCalculatorContainer = () => {
   );
 };
 
-export default HyperloopCalculatorContainer;
+export const mapDispatchToProps = (dispatch: Dispatch) => ({
+  navigateToHome: () => {
+    dispatch(push(ROUTES.HOME));
+  },
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(HyperloopCalculatorContainer);

@@ -62,6 +62,7 @@ const config = (env, argv) => {
         'resources': path.resolve(srcFolder, 'resources'),
         'data': path.resolve(srcFolder, 'data'),
         'charts': path.resolve(srcFolder, 'charts'),
+        'utility': path.resolve(srcFolder, 'utility'),
       },
     },
     module: {
