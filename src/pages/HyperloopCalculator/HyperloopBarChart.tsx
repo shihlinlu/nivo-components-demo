@@ -32,7 +32,6 @@ const getGridXValues = () => {
 /** Bar chart component */
 const HyperloopBarChart = () => {
   const keys = getKeys(hyperloopTravelData);
-  console.log(keys);
 
   return (
     <ResponsiveBar

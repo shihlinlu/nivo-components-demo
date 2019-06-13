@@ -39,6 +39,19 @@ const StyledTitle = styled(Typography)`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    margin-top: 10px;
+  }
+`;
+
+const StyledText = styled(Typography)`
+  && {
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+    margin: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 `;
 
@@ -73,4 +86,5 @@ export {
   StyledButton,
   StyledActionWrapper,
   StyledChartContainer,
+  StyledText,
 };

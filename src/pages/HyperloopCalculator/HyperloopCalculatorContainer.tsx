@@ -9,6 +9,7 @@ import {
   StyledButton,
   StyledActionWrapper,
   StyledChartContainer,
+  StyledText,
 } from './StyledHyperloopComponents';
 
 const HyperloopCalculatorContainer = () => {
@@ -16,7 +17,11 @@ const HyperloopCalculatorContainer = () => {
     <StyledHyperloopPage>
       <StyledHyperloopCardSection>
         <StyledCard>
-          <StyledTitle>Hyperloop Route Calculator</StyledTitle>
+          <StyledTitle variant="h2">Hyperloop Route Calculator</StyledTitle>
+          <StyledText variant="subtitle1" gutterBottom>
+            How long does it take to travel from Albuquerque, NM to Vancouver,
+            BC?
+          </StyledText>
           <StyledChartContainer>
             <HyperloopBarChart />
           </StyledChartContainer>
