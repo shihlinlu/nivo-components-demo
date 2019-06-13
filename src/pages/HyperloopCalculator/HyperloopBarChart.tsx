@@ -6,10 +6,6 @@ import { HyperloopDataType } from 'data/hyperloopDataTypes';
 import hyperloopTravelData from 'data/hyperloopData';
 import colors from './hyperloopConstants';
 
-// get chart keys
-const getKeys = (data: HyperloopDataType[]) =>
-  data.map((travelData: HyperloopDataType) => travelData.time);
-
 // gets 5 evenly-spaced tick values
 const getGridXValues = () => {
   const time = hyperloopTravelData.map((data: HyperloopDataType) => {
@@ -31,8 +27,6 @@ const getGridXValues = () => {
 
 /** Bar chart component */
 const HyperloopBarChart = () => {
-  const keys = getKeys(hyperloopTravelData);
-
   return (
     <ResponsiveBar
       data={hyperloopTravelData}
@@ -47,6 +41,7 @@ const HyperloopBarChart = () => {
         right: 50,
       }}
       colors={colors}
+      colorBy="indexValue"
       axisLeft={{
         tickSize: 7,
         tickPadding: 5,
@@ -67,9 +62,9 @@ const HyperloopBarChart = () => {
       labelSkipHeight={12}
       legends={[
         {
-          dataFrom: 'keys',
+          dataFrom: 'indexes',
           anchor: 'top',
-          direction: 'column',
+          direction: 'row',
           justify: false,
           translateX: 120,
           translateY: 0,

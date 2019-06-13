@@ -10,6 +10,7 @@ const colorPalette = {
   standardBlack: '#0e1111',
   cyanTronBlue: '#6FC3DF',
   darkGray: '#4d5363',
+  blue1: '#66fcf1',
 };
 
 const mainTheme: ThemeType = {
